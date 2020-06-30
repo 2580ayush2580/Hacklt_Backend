@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-
+const HackathonList = require('../models/Hackathon/create');
 const url = 'mongodb://127.0.0.1:27017/Hacklt';
 
 mongoose.connect(url,{
@@ -30,3 +30,18 @@ mongoose.connect(url,{
 //     console.log("Error"+err)
 // })
 
+// const list = new HackathonList({
+//     nameOfHackathon:'XYZ',
+//     aboutTheHackathon:"abcd0",
+//     problemStatement:"abcd0",
+//     prizes:"abcd0",
+//     startDate:"12",
+//     maxTeamSize:5,
+//     endDate:'14',
+// })
+
+// list.save().then((res)=>{
+//     console.log(res);
+// }).catch((err)=>{
+//     console.log(err);
+// })
