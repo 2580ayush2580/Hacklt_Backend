@@ -5,7 +5,7 @@ const router = new express.Router()
 router.post('/hackathonLists', async (req, res) => {
     const hackathonList = new HackathonList({
         ...req.body
-    })
+    }) 
 
     try {
         await hackathonList.save()
