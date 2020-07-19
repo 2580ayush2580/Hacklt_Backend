@@ -44,13 +44,13 @@ const createHackathonScheama = new mongoose.Schema({
     },
     location:{
         type:String
+    },
+    owner: {
+        type: mongoose.Schema.Types.ObjectId,
+        required: true,
     }
-    // owner: {
-    //     type: mongoose.Schema.Types.ObjectId,
-    //     required: false,
-    //     default:''
-    // }
 })
+
 
 const HackathonList = mongoose.model('HackathonList',createHackathonScheama);
 

@@ -25,10 +25,26 @@ router.get('/hackathonLists', async (req, res) => {
 })
 
 router.get('/hackathonLists/:id', async (req, res) => {
+    const owner = req.params.id
+
+    try {
+        const hackathonList = await HackathonList.find({owner:owner})
+
+        if (!hackathonList) {
+            return res.status(404).send()
+        }
+
+        res.send(hackathonList)
+    } catch (e) {
+        res.status(500).send()
+    }
+})
+
+router.get('/hackathonLists/name/:id', async (req, res) => {
     const _id = req.params.id
 
     try {
-        const hackathonList = await HackathonList.findById(_id)
+        const hackathonList = await HackathonList.findById(_id);
 
         if (!hackathonList) {
             return res.status(404).send()

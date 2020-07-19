@@ -15,12 +15,13 @@ router.post('/hackathon/register', async (req, res) => {
     }
 })
 
-router.get('/hackathon/register', async (req, res) => {
+router.get('/hackathon/register/:id', async (req, res) => {
+    const UserId =req.params.id;
     try {
-        const participantList = await ParticipantList.find({})
+        const participantList = await ParticipantList.find({UserId})
         res.send(participantList)
     } catch (e) {
-        res.status(500).send()
+        res.status(500).send(e)
     }
 })
 

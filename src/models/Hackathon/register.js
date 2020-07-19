@@ -50,13 +50,20 @@ const registerHackathonScheama = new mongoose.Schema({
     alternateContactNumber:{
         type:String,
         required: true
+    },
+    hackathonId: {
+        type: mongoose.Schema.Types.ObjectId,
+        required: true,
+    },
+    UserId: {
+        type: mongoose.Schema.Types.ObjectId,
+        required: true,
+    },
+    data:{
+        type:Object
     }
-    // hackathonId: {
-    //     type: mongoose.Schema.Types.ObjectId,
-    //     required: true,
-    // }
 })
 
 const ParticipantList = mongoose.model('ParticipantList',registerHackathonScheama);
 
-module.exports = ParticipantList ;
+module.exports = ParticipantList ; 
