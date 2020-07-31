@@ -14,6 +14,14 @@ const createHackathonScheama = new mongoose.Schema({
         type:String,
         required:true
     },
+    rules:{
+        type:String,
+        required:true
+    },
+    instructions:{
+        type:String,
+        required:true
+    },
     maxTeamSize:{
         type: Number,
         required:true
@@ -43,6 +51,9 @@ const createHackathonScheama = new mongoose.Schema({
         required: true
     },
     location:{
+        type:String
+    },
+    email:{
         type:String
     },
     owner: {

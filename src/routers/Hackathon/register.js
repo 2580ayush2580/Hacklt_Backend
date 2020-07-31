@@ -25,4 +25,14 @@ router.get('/hackathon/register/:id', async (req, res) => {
     }
 })
 
+router.get('/hackathon/participant/:id', async (req, res) => {
+    const hackathonId =req.params.id;
+    try {
+        const participantList = await ParticipantList.find({hackathonId})
+        res.send(participantList)
+    } catch (e) {
+        res.status(500).send(e)
+    }
+})
+
 module.exports = router

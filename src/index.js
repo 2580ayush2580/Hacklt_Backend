@@ -3,6 +3,7 @@ const morgan = require('morgan');
 const authRouter = require('./routers/Auth/auth')
 const hackathonRouter = require('./routers/Hackathon/hackathon')
 const hackathonRegister = require('./routers/Hackathon/register');
+const submissionRouter = require('./routers/Hackathon/submit')
 const bodyParser = require('body-parser');
 const cors = require('cors');
 require('./db/mongoose');
@@ -25,6 +26,7 @@ if(process.env.NODE_ENV === 'development'){
 app.use('/api',authRouter);
 app.use('/api',hackathonRouter);
 app.use('/api',hackathonRegister);
+app.use('/api',submissionRouter);
  
 app.use((req, res) => {
     res.status(404).json({

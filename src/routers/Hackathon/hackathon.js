@@ -15,7 +15,7 @@ router.post('/hackathonLists', async (req, res) => {
     }
 })
 
-router.get('/hackathonLists', async (req, res) => {
+router.get('/hackathonLists/all', async (req, res) => {
     try {
         const hackathonLists = await HackathonList.find({})
         res.send(hackathonLists)
